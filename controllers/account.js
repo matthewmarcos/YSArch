@@ -16,7 +16,7 @@ exports.login = (req, res, next) => {
             type: 'login'
         });
 
-        // req.session.user = user;
+        req.session.user = body;
 
         respond(200, result);
     }
