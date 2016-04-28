@@ -3,8 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>YSArch</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-    <h1>Coming soon</h1>
+    <!-- Navbar goes here -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">YSArch</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Account Settings
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu text-center">
+                            <li>
+                                <a href="#">Change Details
+                                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Transfer Power
+                                    <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                            <!-- <li><a href="#">Something else here</a></li> -->
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <!-- Logout Button -->
+                                <a href="#" class="text-center">
+                                    Logout
+                                    &nbsp;
+                                    <span class="glyphicon glyphicon-log-out" style="color:red"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- End of Navbar -->
+    <div class="container">
+        <h1 class="text-center">Coming Soon</h1>
+    </div>
 </body>
+
+<script src="javascripts/jquery.min.js"></script>
+<script src="javascripts/jquery-validate.min.js"></script>
+<script src="javascripts/jquery-templates.min.js"></script>
+<script src="javascripts/home-controller.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
 </html>
