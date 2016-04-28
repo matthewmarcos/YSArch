@@ -62,5 +62,9 @@
         if($password1.length < PASSWORD_LENGTH) {
             return console.log('Shorter than ' + PASSWORD_LENGTH);
         }
+
+        $.post('/reg', (res) => {
+            console.log(res);
+        });
     });
 </script>

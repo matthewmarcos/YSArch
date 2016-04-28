@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const routes = require('./lib/router');
 const app = express();
+const session = require('express-session');
 
 
 // view engine setup
@@ -16,6 +17,12 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
+
+app.use(session({
+    secret: 'notKeyBoardCat',
+    resave: false,
+    saveUninitialized: true
+}));
 
 app.use(bodyParser.urlencoded({
     extended: false

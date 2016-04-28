@@ -32,10 +32,23 @@
     $('#login-button').click((e) => {
         e.preventDefault();
 
-        const $username = $('#username').val();
-        const $password = $('#passwordinput').val();
+        const username = $('#username').val();
+        const password = $('#passwordinput').val();
 
-        $.post('/login', (res) => {
+        const formData = {
+            username,
+            password
+        };
+
+        if(username == '') {
+            return console.log('No username input');
+        }
+
+        if(password == '') {
+            return console.log('No password input');
+        }
+
+        $.post('/login', formData, (res) => {
             console.log(res);
         });
     });
