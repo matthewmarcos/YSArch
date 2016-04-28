@@ -1,0 +1,66 @@
+<form class="form-horizontal">
+    <fieldset>
+        <!-- Form Name -->
+        <legend>Register</legend>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Username</label>
+            <div class="col-md-4">
+                <input id="textinput" name="textinput" type="text" placeholder="username" class="form-control input-md"> </div>
+        </div>
+        <!-- Password input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="passwordinput1">Password</label>
+            <div class="col-md-4">
+                <input id="passwordinput1" name="passwordinput1" type="password" placeholder="" class="form-control input-md"> </div>
+        </div>
+        <!-- Password input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="passwordinput2">Password (again)</label>
+            <div class="col-md-4">
+                <input id="passwordinput2" name="passwordinput2" type="password" placeholder="" class="form-control input-md"> </div>
+        </div>
+        <!-- Multiple Radios -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Account">Account Type</label>
+            <div class="col-md-4">
+                <div class="radio">
+                    <label for="Account-0">
+                        <input type="radio" name="Account" id="Account-0" value="Admin" checked="checked"> Admin </label>
+                </div>
+                <div class="radio">
+                    <label for="Account-1">
+                        <input type="radio" name="Account" id="Account-1" value="User"> User </label>
+                </div>
+            </div>
+        </div>
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="register-button"></label>
+            <div class="col-md-4">
+                <button id="register-button" class="btn btn-block btn-primary btn-primary">
+                    Register <span class="glyphicon glyphicon-send"></span>
+                </button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+<script>
+    $('#register-button').click((e) => {
+        e.preventDefault();
+
+        // Form validate
+        const PASSWORD_LENGTH = 8;
+        const $password1 = $('#passwordinput1').val();
+        const $password2 = $('#passwordinput2').val();
+
+        if($password1 !== $password2) {
+            return console.log('Not equal');
+        }
+
+        if($password1.length < PASSWORD_LENGTH) {
+            return console.log('Shorter than ' + PASSWORD_LENGTH);
+        }
+    });
+</script>

@@ -4,9 +4,9 @@
         <legend>Login</legend>
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Username</label>
+            <label class="col-md-4 control-label" for="username">Username</label>
             <div class="col-md-4">
-                <input id="textinput" name="textinput" type="text" placeholder="username" class="form-control input-md" required="">
+                <input id="username" name="username" type="text" placeholder="username" class="form-control input-md" required="">
             </div>
         </div>
 
@@ -19,11 +19,24 @@
         </div>
 
         <div class="form-group">
-            <label class="col-md-4 control-label" for="passwordinput">Password</label>
+            <label class="col-md-4 control-label" for="login-button"></label>
             <div class="col-md-4">
-                <a href="#" id="login-button" onClick="login()" class="btn btn-primary">Login <span class="glyphicon glyphicon-arrow-right"></span></a>
+                <a href="#" id="login-button" class="btn btn-primary">Login <span class="glyphicon glyphicon-arrow-right"></span></a>
             </div>
         </div>
 
     </fieldset>
 </form>
+
+<script>
+    $('#login-button').click((e) => {
+        e.preventDefault();
+
+        const $username = $('#username').val();
+        const $password = $('#passwordinput').val();
+
+        $.post('/login', (res) => {
+            console.log(res);
+        });
+    });
+</script>
