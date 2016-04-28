@@ -49,8 +49,9 @@
         }
 
         $.post('/login', formData, (res) => {
-            window.location.replace('/home');
-
+            if(res) {
+                window.location.replace('/home');
+            }
         });
     });
 </script>

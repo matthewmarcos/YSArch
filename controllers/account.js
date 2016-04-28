@@ -22,9 +22,8 @@ exports.login = (req, res, next) => {
     }
 
     function respond(status, response) {
-        res.status(status).send(response);
+        res.redirect('/home');
     }
-
 
     start();
 };
@@ -48,7 +47,7 @@ exports.logout = (req, res, next) => {
     }
 
     function respond(status, response) {
-        res.status(status).send(response);
+        res.redirect('/');
     }
 
     start();
@@ -57,9 +56,25 @@ exports.logout = (req, res, next) => {
 
 exports.register = (req, res, next) => {
 
-    res.status(200)
-        .send({
+    function start() {
+
+        let result = {};
+
+        const body = _.pick(req.body, ['username', 'password']);
+        _.assign(result, body);
+        _.assign(result, {
             status: '200',
-            type: 'register'
+            type: 'login'
         });
+
+
+        respond(200, result);
+    }
+
+    function respond(status, response) {
+        res.status(200)
+            .send(response);
+    }
+
+    start();
 };
