@@ -1,12 +1,11 @@
 'use strict';
 
-let login = _ => {
-    console.log('Submitted');
+const login = _ => {
+    $.post('/login', (res) => {
+        console.log(res);
+    });
 };
 
 $(_ => {
     $('#login-container').loadTemplate('/templates/login-form.html', {});
-    $('#login-button').click(function () {
-        console.log('Submitted');
-    });
 });
