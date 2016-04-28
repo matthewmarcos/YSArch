@@ -67,7 +67,6 @@ exports.register = (req, res, next) => {
             type: 'login'
         });
 
-
         respond(200, result);
     }
 
